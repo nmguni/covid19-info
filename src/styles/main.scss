@@ -93,8 +93,11 @@ a {
   }
 }
 
+// card section ----------
+
 section {
   padding: 0.5rem;
+  height: 100%;
   .topRow {
     height: 300px;
     display: grid;
@@ -129,5 +132,185 @@ section {
     grid-gap: 0.5em;
     padding: 0.2em;
     grid-template-columns: 3.5fr 1.5fr;
+  }
+}
+
+.body {
+  .cloth-mask,
+  .myths {
+    // background-image: url("../images/cloth-mask.jpg");
+    overflow: hidden;
+  }
+}
+
+.cloth-mask {
+  background-image: url("../images/undraw_doctors_hwty.svg");
+  background-position: center;
+  background-size: cover;
+  transition: transform 0.5s, background-color 0.5s ease-in-out;
+  background &:hover {
+    // filter: blur(0);
+    background-color: rgba(85, 85, 85, 0.205);
+  }
+}
+
+//     -----  ZOOM TRANSITIONS -----
+
+// Blur-out with Zooming-in
+
+.img-hover-zoom:hover img {
+  transform: scale(1);
+}
+
+// Basic zoom
+
+.parent {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.wrapper {
+  text-align: center;
+}
+
+.child {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.bg-one {
+  background-image: url("../images/undraw_doctors_hwty.svg");
+  opacity: 0.6;
+  background-color: #fc85af63;
+}
+.bg-two {
+  background-image: url("../images/undraw_faq_rjoy.svg");
+  opacity: 0.6;
+  background-color: #fc85af63;
+}
+.bg-three {
+  background-image: url("../images/undraw_to_do_list_a49b.svg");
+  opacity: 0.6;
+  background-color: #9e579d63;
+}
+.bg-four {
+  background-image: url("../images/undraw_gradma_wanr.svg");
+  opacity: 0.6;
+  background-color: #9e579d63;
+}
+.bg-five {
+  background-image: url("../images/undraw_baby_ja7a.svg");
+  opacity: 0.6;
+  background-color: #574b9069;
+}
+.bg-six {
+  background-image: url("../images/undraw_agreement_aajr.svg");
+  opacity: 0.6;
+  background-color: #574b9069;
+}
+.bg-seven {
+  background-image: url("../images/undraw_social_distancing_2g0u.svg");
+  opacity: 0.6;
+  background-color: #574b9062;
+}
+.bg-eight {
+  background-image: url("../images/undraw_doctor_kw5l.svg");
+  opacity: 0.6;
+  background-color: #574b9062;
+}
+.bg-nine {
+  background-image: url("../images/undraw_aircraft_fbvl.svg");
+  opacity: 0.6;
+  background-color: #574b9062;
+}
+
+#link {
+  font-size: 3em;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #000000;
+  font-family: "Khula", sans-serif;
+  text-align: center;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 50px;
+  cursor: pointer;
+  /*text-decoration: none;*/
+}
+
+.parent:hover .child,
+.parent:focus .child {
+  opacity: unset;
+  background-color: #fff;
+  -ms-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.parent:hover .child:before,
+.parent:focus .child:before {
+  display: block;
+  opacity: 0.8;
+}
+
+.parent:hover a,
+.parent:focus a {
+  display: block;
+}
+
+.child:before {
+  content: "";
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Media Queries */
+@media screen and (max-width: 960px) {
+  .parent {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  section {
+    .topRow {
+      height: 300px;
+      display: grid;
+      grid-gap: 0.5em;
+      padding: 0.2em;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  section {
+    .topRow {
+      height: 300px;
+      display: grid;
+      grid-gap: 0.5em;
+      padding: 0.2em;
+      grid-template-columns: 1fr;
+    }
   }
 }
